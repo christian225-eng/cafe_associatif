@@ -403,15 +403,16 @@ textarea:focus-visible {
   color: var(--color-primary);
   font-size: 42px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-/* La grille qui range les cartes */
+/* La grille qui range les cartes : 4 par ligne sur ordinateur */
 .grille-activites {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  padding: 20px 40px 60px;
-  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 20px 60px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -420,7 +421,7 @@ textarea:focus-visible {
   background-color: var(--color-white);
   border-radius: 16px;
   border-top: 5px solid var(--color-secondary);
-  padding: 25px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.2s ease;
@@ -449,7 +450,22 @@ textarea:focus-visible {
 }
 
 .prix {
-  font-style: italic;}
+  font-style: italic;
+}
+
+/* Tablette : 2 cartes par ligne */
+@media (max-width: 900px) {
+  .grille-activites {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Téléphone : 1 carte par ligne */
+@media (max-width: 550px) {
+  .grille-activites {
+    grid-template-columns: 1fr;
+  }
+}
 /* ==========================================
    06. PAGE D'ACCUEIL — HERO SECTION
    ========================================== */
