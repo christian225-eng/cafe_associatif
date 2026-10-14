@@ -391,7 +391,6 @@ textarea:focus-visible {
   }
 }
 
-<<<<<<< HEAD
 /*STYLE DE LA PAGE ACTIVITES */
 
 /* Titre et phrase d'introduction de la page */
@@ -450,8 +449,7 @@ textarea:focus-visible {
 }
 
 .prix {
-  font-style: italic;
-=======
+  font-style: italic;}
 /* ==========================================
    06. PAGE D'ACCUEIL — HERO SECTION
    ========================================== */
@@ -772,5 +770,4 @@ textarea:focus-visible {
   .home-activities__card:hover img {
     transform: none;
   }
->>>>>>> 442b5a5fc085aa3987cd264aaae7425744666ff6
 }
