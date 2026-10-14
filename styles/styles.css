@@ -1221,3 +1221,150 @@ textarea:focus-visible {
     letter-spacing: 0.1em;
   }
 }
+
+/* ==========================================
+   PAGE D'ACCUEIL — SECTION ACTIVITÉS
+   ========================================== */
+
+/* Conteneur et titre */
+.home-activities {
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+  background: var(--color-background);
+}
+
+.home-activities__intro {
+  max-width: 760px;
+  margin: 0 auto clamp(2rem, 4vw, 3.25rem);
+  text-align: center;
+}
+
+.home-activities .home-activities__eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-activities .home-activities__title {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.home-activities .home-activities__intro-text {
+  max-width: 58ch;
+  margin: 0 auto;
+  color: var(--color-text);
+}
+
+/* Grille des activités */
+.home-activities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Cartes */
+.home-activities__card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--color-white);
+  box-shadow: 0 8px 24px rgb(37 45 39 / 8%);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-activities__card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.home-activities__card-content {
+  flex: 1;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.home-activities__card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--color-primary);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+}
+
+.home-activities__card p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+/* Effets au survol */
+.home-activities__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgb(37 45 39 / 14%);
+  color: var(--color-text);
+}
+
+.home-activities__card:hover img {
+  transform: scale(1.04);
+}
+
+.home-activities__card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.home-activities__card:focus-visible h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  text-underline-offset: 0.2em;
+}
+
+/* Bouton d'accès à toutes les activités */
+.home-activities__action {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-activities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-activities {
+    padding-block: 3.5rem;
+  }
+
+  .home-activities__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .home-activities__card-content {
+    padding: 1.1rem 1.1rem 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-activities__card,
+  .home-activities__card img {
+    transition: none;
+  }
+
+  .home-activities__card:hover,
+  .home-activities__card:hover img {
+    transform: none;
+  }
+}
