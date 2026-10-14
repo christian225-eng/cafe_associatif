@@ -1384,3 +1384,239 @@ textarea:focus-visible {
     transform: none;
   }
 }
+
+/* ==========================================
+   PAGE ÉQUIPE — STYLES SPÉCIFIQUES
+   ========================================== */
+
+/* Introduction */
+.team-page-intro {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(4rem, 9vw, 7rem) var(--page-gutter);
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.team-page-intro__inner {
+  width: min(100%, 900px);
+  margin-inline: auto;
+}
+
+.team-page-intro .team-page-intro__eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.team-page-intro .team-page-intro__title {
+  margin: 0 0 1rem;
+  color: var(--color-white);
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  text-wrap: balance;
+}
+
+.team-page-intro .team-page-intro__description {
+  max-width: 58ch;
+  margin: 0 auto;
+  color: var(--color-white);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Présentation */
+.team-page-presentation {
+  padding-block: clamp(3.75rem, 7vw, 6rem);
+  background: var(--color-background);
+}
+
+.team-page-presentation__inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.team-page-presentation__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-page-presentation .team-page-presentation__eyebrow,
+.team-page-members .team-page-members__eyebrow {
+  margin: 0 0 0.7rem;
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.team-page-presentation .team-page-presentation__title,
+.team-page-members .team-page-members__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+  text-wrap: balance;
+}
+
+.team-page-presentation .team-page-presentation__description {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+
+/* Membres */
+.team-page-members {
+  padding-block: clamp(3.75rem, 7vw, 6rem);
+  background: var(--color-background);
+}
+
+.team-page-members__inner {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.team-page-members__intro {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.team-page-members .team-page-members__title {
+  margin-bottom: 0;
+}
+
+.team-page-members__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.team-page-member-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--color-white);
+  box-shadow: 0 8px 24px rgb(37 45 39 / 8%);
+  text-align: center;
+}
+
+.team-page-member-card__photo {
+  position: relative;
+  display: grid;
+  min-height: 220px;
+  overflow: hidden;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 105%, rgb(36 74 56 / 14%) 0 38%, transparent 39%),
+    linear-gradient(145deg, #efe7d7, #e3d8c3);
+}
+
+.team-page-member-card__photo::before {
+  width: 72px;
+  height: 72px;
+  margin-top: -30px;
+  border: 5px solid rgb(255 255 255 / 72%);
+  border-radius: 50%;
+  background: var(--color-secondary);
+  box-shadow: 0 0 0 1px rgb(36 74 56 / 10%);
+  content: "";
+}
+
+.team-page-member-card__photo::after {
+  position: absolute;
+  bottom: -43px;
+  width: 170px;
+  height: 120px;
+  border: 5px solid rgb(255 255 255 / 72%);
+  border-radius: 50% 50% 0 0;
+  background: var(--color-primary);
+  content: "";
+}
+
+.team-page-member-card__content {
+  padding: 1.35rem 1.25rem 1.6rem;
+}
+
+.team-page-member-card .team-page-member-card__name {
+  margin: 0 0 0.35rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.team-page-member-card .team-page-member-card__role {
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* Appel à l'action */
+.team-page-join {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(3.75rem, 7vw, 6rem) var(--page-gutter);
+  background: #E9DFC9;
+  text-align: center;
+}
+
+.team-page-join__inner {
+  width: min(100%, 800px);
+  margin-inline: auto;
+}
+
+.team-page-join .team-page-join__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  text-wrap: balance;
+}
+
+.team-page-join .team-page-join__description {
+  max-width: 58ch;
+  margin: 0 auto 1.75rem;
+  color: var(--color-text);
+}
+
+.team-page-join__button {
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .team-page-presentation__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .team-page-members__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .team-page-intro {
+    padding-block: 4rem;
+  }
+
+  .team-page-presentation,
+  .team-page-members {
+    padding-block: 3.5rem;
+  }
+
+  .team-page-members__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .team-page-member-card__photo {
+    min-height: 200px;
+  }
+
+  .team-page-join {
+    padding-block: 3.5rem;
+  }
+}
