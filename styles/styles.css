@@ -1,0 +1,392 @@
+/* ==========================================
+   01. STYLES GÉNÉRAUX DU SITE
+   ========================================== */
+
+/* Variables CSS, reset, typographies */
+:root {
+  --color-primary: #244A38;
+  --color-secondary: #DAB77C;
+  --color-background: #F7F3E9;
+  --color-accent: #B86645;
+  --color-text: #252D27;
+  --color-white: #FFFFFF;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+
+  --button-radius: 50px;
+  --button-padding: 14px 24px;
+  --button-transition: 0.2s ease;
+
+  --content-width: 1120px;
+  --page-gutter: clamp(20px, 5vw, 64px);
+  --focus-ring: 3px solid var(--color-accent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.site-main {
+  width: min(100% - (2 * var(--page-gutter)), var(--content-width));
+  min-height: 18rem;
+  margin-inline: auto;
+  flex: 1;
+}
+
+.site-main h1,
+.site-main h2,
+.site-main h3,
+.site-footer__heading {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.site-main h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); }
+.site-main h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.site-main h3 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
+
+.site-main p {
+  max-width: 70ch;
+  margin-block: 0 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.site-skip-link {
+  position: absolute;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
+  transform: translateY(-160%);
+  border-radius: 4px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.site-skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   02. BOUTONS COMMUNS
+   ========================================== */
+
+.btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding);
+  border: 2px solid transparent;
+  border-radius: var(--button-radius);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--button-transition), background-color var(--button-transition), border-color var(--button-transition), box-shadow var(--button-transition);
+}
+
+.btn-primary {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  border-color: #183426;
+  background: #183426;
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  border-color: var(--color-secondary);
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  border-color: #c8a263;
+  background: #c8a263;
+  color: var(--color-text);
+}
+
+.btn-outline {
+  border-color: var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   03. HEADER ET NAVIGATION
+   ========================================== */
+
+.site-header {
+  background: var(--color-background);
+  border-bottom: 1px solid rgb(37 45 39 / 12%);
+}
+
+.site-header__inner {
+  width: min(100% - (2 * var(--page-gutter)), 1280px);
+  min-height: 88px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-brand {
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.site-brand:hover {
+  color: var(--color-accent);
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  display: inline-block;
+  padding-block: 0.65rem;
+  color: var(--color-text);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 2px;
+  transition: color var(--button-transition), text-decoration-color var(--button-transition);
+}
+
+.site-nav__link:hover {
+  color: var(--color-accent);
+}
+
+.site-nav__link[aria-current="page"] {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+}
+
+.site-nav__link[aria-current="page"]:hover {
+  color: var(--color-accent);
+}
+
+/* ==========================================
+   04. FOOTER COMMUN
+   ========================================== */
+
+.site-footer {
+  padding: 3.25rem var(--page-gutter) 1.25rem;
+  background: var(--color-text);
+  color: var(--color-white);
+}
+
+.site-footer__inner {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.site-footer__column p {
+  max-width: 34ch;
+  margin: 0;
+  color: rgb(255 255 255 / 84%);
+}
+
+.site-footer__heading {
+  margin: 0 0 1rem;
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.site-footer__links {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__links a {
+  color: rgb(255 255 255 / 88%);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.site-footer__links a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.site-footer a:focus-visible {
+  outline-color: var(--color-secondary);
+}
+
+.site-footer__bottom {
+  width: min(100%, var(--content-width));
+  margin: 2.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 22%);
+  color: rgb(255 255 255 / 78%);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
+/* ==========================================
+   05. RESPONSIVE GLOBAL
+   ========================================== */
+
+@media (max-width: 760px) {
+  .site-header__inner {
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-block: 1rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .site-nav__list {
+    width: max-content;
+    min-width: 100%;
+    justify-content: space-between;
+    gap: clamp(1rem, 5vw, 2rem);
+  }
+
+  .site-nav__link {
+    white-space: nowrap;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .site-footer__column:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-footer {
+    padding-top: 2.5rem;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .site-footer__column:first-child {
+    grid-column: auto;
+  }
+
+  .site-footer__bottom {
+    margin-top: 2rem;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
