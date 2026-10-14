@@ -1097,3 +1097,127 @@ textarea:focus-visible {
     width: 100%;
   }
 }
+
+/* ==========================================
+   PAGE D'ACCUEIL — SECTION ÉQUIPE
+   ========================================== */
+
+/* Structure */
+.home-team {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(3.5rem, 7vw, 6rem) var(--page-gutter);
+  background: #E9DFC9;
+}
+
+.home-team__inner {
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+/* Image */
+.home-team__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Texte et bouton */
+.home-team .home-team__eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-team .home-team__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-wrap: balance;
+}
+
+.home-team .home-team__description {
+  max-width: 52ch;
+  margin: 0 0 1.75rem;
+  color: var(--color-text);
+}
+
+.home-team__button {
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .home-team__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .home-team__image {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ==========================================
+   PAGE D'ACCUEIL — SECTION CONTACT
+   ========================================== */
+
+/* Structure */
+.home-contact {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(4rem, 8vw, 7rem) var(--page-gutter);
+  background: var(--color-primary);
+}
+
+/* Contenu centré */
+.home-contact__content {
+  width: min(100%, 760px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.home-contact .home-contact__eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--color-secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-contact .home-contact__title {
+  margin: 0 0 1rem;
+  color: var(--color-white);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  text-wrap: balance;
+}
+
+.home-contact .home-contact__description {
+  max-width: 58ch;
+  margin: 0 auto 2rem;
+  color: var(--color-white);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.home-contact__button {
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+  .home-contact {
+    padding-block: 3.75rem;
+  }
+
+  .home-contact .home-contact__eyebrow {
+    letter-spacing: 0.1em;
+  }
+}
